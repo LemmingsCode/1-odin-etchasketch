@@ -1,19 +1,25 @@
-.container {
-  width: 100vw;
-  height: 100vh;
-
-  display: grid;
-
-  gap: 10px;
-  padding: 10px;
-  box-sizing: border-box;
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+  background-color: black;
 }
 
-.gridSixteen {
+#container {
   display: grid;
-  grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  background-color: Blue;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+
 }
+
+.grid-class {
+  padding: 1em;
+  border: 1px solid #dddd;
+  text-align: center;
+  color: white;
+  background-color: green;
+}
+
+
 
 /* html {
   font-size: 10px;
