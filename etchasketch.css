@@ -19,7 +19,9 @@
   background-color: green;
 }
 
-
+/* .new-grid-color {
+  background-color: red;
+} */
 
 /* html {
   font-size: 10px;
@@ -38,62 +40,7 @@ body,html {
   border: 1px solid #000000;
 }
 
-.choices {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  grid-column: 2/3;
-  grid-row: 2/3;
-}
-
-.choice {
-  border: .4rem solid black;
-  border-radius: .5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  transition: all .07s ease;
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 .5rem black;
-}
-
-.scoreboard {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  font-family: 'Quicksand', sans-serif;
-  font-size: 5rem;
-  grid-column: 2/3;
-  grid-row: 3/4;
-}
-
-.scoreboard__name,
-.scoreboard__score, {
-  padding: 10px;
-  text-align: center;
-}
-
-.scoreboard__name {
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-}
-
-.playing {
-  transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
-}
-
 button {
   display: block;
   font-size: 4rem;
 }
-
-.sound {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  color: #ffc600;
-} */

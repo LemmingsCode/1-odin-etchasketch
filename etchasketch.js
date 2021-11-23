@@ -9,32 +9,21 @@ function makeRows (rows, cols) {
     container.style.setProperty('--grid-cols', cols);
     for (c = 0; c < (rows * cols); c++) {
         let cell = document.createElement("div");
-        cell.innerText = (c + 1);
+        // cell.innerText = (c + 1);
         container.appendChild(cell).className = "grid-class";
-        cell.backgroundColor = "blue";
     };
 };
 
 makeRows(16, 16);
 const gridItemsNodeList = container.children; // array like object (nodelist)
-const gridItemsArray = Array.prototype.slice.call(gridItemsNodeList);
+const gridItemsArray = Array.prototype.slice.call(gridItemsNodeList); ; // convert nodelist to array so we can add event listeners to each item
 console.log(gridItemsArray);
 
 gridItemsArray.forEach(gridItemsArray => gridItemsArray.addEventListener('mouseover', changeGridColor)); //this only works with arrays
 
 function changeGridColor (e) {
-    console.log(e.target);
-    gridItemsNodeList.append.className = "new-grid-color";
-    // add a new class to this class to change background color
+    console.log(e);
+    // gridItemsNodeList.className = "new-grid-color"; How do I make the event listener change the corresponding node color? Can I try if this. operator works?
+    this.style.backgroundColor = "red"; // this binds to the event in this instance, returning all values. this.style looks for the style property within the event. Second question is, is it appropriate to use "this" in this situation or should I find another way to change the background colour?
 }
-
-
-// function changeGridColor (e) {
-//     var attribute = this.getAttribute("data-myattribute");
-//     console.log('event type: '+ attribute);
-// }
-
-// for (let i = 0; i < gridItem.length; i++) {
-//     gridItem[i].addEventListener('mouseenter', changeGridColor, false);
-// }
 
