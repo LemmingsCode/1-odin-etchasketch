@@ -3,7 +3,6 @@
 // change the div's background color using javascript
 
 const container = document.getElementById("container");
-const gridItems = document.querySelectorAll(".grid-class");
 
 function makeRows (rows, cols) {
     container.style.setProperty('--grid-rows', rows);
@@ -12,17 +11,20 @@ function makeRows (rows, cols) {
         let cell = document.createElement("div");
         cell.innerText = (c + 1);
         container.appendChild(cell).className = "grid-class";
-        // console.log(this)
+        cell.backgroundColor = "blue";
     };
 };
 
-// gridItems.addEventListener('load', changeGridColor);
 makeRows(16, 16);
+const gridItemsNodeList = container.children; // array like object (nodelist)
+const gridItemsArray = Array.prototype.slice.call(gridItemsNodeList);
+console.log(gridItemsArray);
 
-gridItems.forEach(gridItem => gridItem.addEventListener('mouseover', changeGridColor));
+gridItemsArray.forEach(gridItemsArray => gridItemsArray.addEventListener('mouseover', changeGridColor)); //this only works with arrays
 
 function changeGridColor (e) {
-    console.log(e);
+    console.log(e.target);
+    gridItemsNodeList.append.className = "new-grid-color";
     // add a new class to this class to change background color
 }
 
